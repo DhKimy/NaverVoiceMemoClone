@@ -47,7 +47,6 @@ extension MemoListViewModel {
         if let index = memos.firstIndex(where: { $0.id == memo.id }) {
             memos[index] = memo
         }
-
     }
 
     func removeMemo(_ memo: Memo) {
