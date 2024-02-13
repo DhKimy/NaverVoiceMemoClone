@@ -11,6 +11,7 @@ struct MemoListView: View {
 
     @EnvironmentObject private var pathModel: PathModel
     @EnvironmentObject private var memoListViewModel: MemoListViewModel
+    @EnvironmentObject private var homeViewModel: HomeViewModel
 
     var body: some View {
         ZStack {
@@ -54,6 +55,12 @@ struct MemoListView: View {
             }
             Button("취소", role: .cancel) { }
         }
+        .onChange(
+            of: memoListViewModel.memos,
+            perform: { memos in
+                homeViewModel.setMemoCount(memos.count)
+            }
+        )
     }
 }
 

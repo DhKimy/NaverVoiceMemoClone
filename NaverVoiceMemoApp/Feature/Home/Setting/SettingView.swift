@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingView: View {
 
+    @EnvironmentObject private var homeViewModel: HomeViewModel
+
     var body: some View {
         VStack {
             // 타이틀
@@ -50,19 +52,21 @@ private struct TitleView: View {
 // MARK: - 설정된 카운트 뷰
 private struct TotalTabCountView: View {
 
+    @EnvironmentObject private var homeViewModel: HomeViewModel
+
     fileprivate var body: some View {
         HStack{
             Spacer()
 
-            TabCountView(title: "To do", count: 1)
+            TabCountView(title: "To do", count: homeViewModel.todosCount)
 
             Spacer()
 
-            TabCountView(title: "메모", count: 2)
+            TabCountView(title: "메모", count: homeViewModel.memosCount)
 
             Spacer()
 
-            TabCountView(title: "음성메모", count: 3)
+            TabCountView(title: "음성메모", count: homeViewModel.voiceRecorderCount)
 
             Spacer()
         }
@@ -96,16 +100,41 @@ private struct TabCountView: View {
 // MARK: - 전체 탭 이동 뷰
 private struct TotalTabMoveView: View {
 
+    @EnvironmentObject private var homeViewModel: HomeViewModel
+
     fileprivate var body: some View {
         VStack {
             Rectangle()
                 .fill(Color.custoGray1)
                 .frame(height: 1)
 
-            TabMoveView(title: "To do List", tabAction: { })
-            TabMoveView(title: "메모장", tabAction: { })
-            TabMoveView(title: "음성메모", tabAction: { })
-            TabMoveView(title: "타이머", tabAction: { })
+            TabMoveView(
+                title: "To do List",
+                tabAction: {
+                    homeViewModel.changeSelectedTab(.todoList)
+                }
+            )
+
+            TabMoveView(
+                title: "메모장",
+                tabAction: {
+                    homeViewModel.changeSelectedTab(.memo)
+                }
+            )
+
+            TabMoveView(
+                title: "음성메모",
+                tabAction: {
+                    homeViewModel.changeSelectedTab(.voiceRecorder)
+                }
+            )
+
+            TabMoveView(
+                title: "타이머",
+                tabAction: {
+                    homeViewModel.changeSelectedTab(.timer)
+                }
+            )
 
             Rectangle()
                 .fill(Color.custoGray1)
@@ -143,4 +172,5 @@ private struct TabMoveView: View {
 
 #Preview {
     SettingView()
+        .environmentObject(HomeViewModel())
 }

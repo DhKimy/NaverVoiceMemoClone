@@ -42,6 +42,8 @@
 		C9F1B8E32B7B442500C64891 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8E22B7B442500C64891 /* TimerViewModel.swift */; };
 		C9F1B8E62B7B50B400C64891 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8E52B7B50B400C64891 /* NotificationService.swift */; };
 		C9F1B8E92B7B6E3E00C64891 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8E82B7B6E3E00C64891 /* SettingView.swift */; };
+		C9F1B8EC2B7B731400C64891 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8EB2B7B731400C64891 /* Tab.swift */; };
+		C9F1B8EE2B7B736F00C64891 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8ED2B7B736F00C64891 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		C9F1B8E22B7B442500C64891 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		C9F1B8E52B7B50B400C64891 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C9F1B8E82B7B6E3E00C64891 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C9F1B8EB2B7B731400C64891 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		C9F1B8ED2B7B736F00C64891 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 		C9F1B8972B78FE7700C64891 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C9F1B8EA2B7B72FC00C64891 /* Home */,
 				C9F1B8AB2B79104500C64891 /* Path */,
 				C9F1B8A42B7905F900C64891 /* Onboarding */,
 				C9F1B8BD2B79CFA900C64891 /* Todo */,
@@ -198,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F1B8B02B7911B000C64891 /* HomeView.swift */,
+				C9F1B8ED2B7B736F00C64891 /* HomeViewModel.swift */,
 				C9F1B8C02B79D07A00C64891 /* TodoList */,
 				C9F1B8C12B79D08A00C64891 /* MemoList */,
 				C9F1B8D52B7A50F500C64891 /* VoiceRecoder */,
@@ -338,6 +344,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		C9F1B8EA2B7B72FC00C64891 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C9F1B8EB2B7B731400C64891 /* Tab.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,6 +440,7 @@
 				C9F1B8872B78F86E00C64891 /* ContentView.swift in Sources */,
 				C9F1B8A82B79066600C64891 /* OnboardingView.swift in Sources */,
 				C9F1B8C82B79D11C00C64891 /* TodoListViewModel.swift in Sources */,
+				C9F1B8EE2B7B736F00C64891 /* HomeViewModel.swift in Sources */,
 				C9F1B8C42B79D10100C64891 /* TodoViewModel.swift in Sources */,
 				C9F1B8DC2B7B2A0F00C64891 /* Time.swift in Sources */,
 				C9F1B8BC2B79CD4900C64891 /* CustomNavigationBar.swift in Sources */,
@@ -436,6 +451,7 @@
 				C9F1B8CE2B7A341C00C64891 /* MemoViewModel.swift in Sources */,
 				C9F1B8C62B79D10F00C64891 /* TodoListView.swift in Sources */,
 				C9F1B8B32B7911BA00C64891 /* TodoView.swift in Sources */,
+				C9F1B8EC2B7B731400C64891 /* Tab.swift in Sources */,
 				C9F1B8E12B7B441D00C64891 /* TimerView.swift in Sources */,
 				C9F1B8D42B7A505500C64891 /* Double+Extension.swift in Sources */,
 				C9F1B8B52B7911C200C64891 /* MemoView.swift in Sources */,
