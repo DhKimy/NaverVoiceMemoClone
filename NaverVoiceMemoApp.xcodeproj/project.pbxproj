@@ -41,6 +41,7 @@
 		C9F1B8E12B7B441D00C64891 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8E02B7B441D00C64891 /* TimerView.swift */; };
 		C9F1B8E32B7B442500C64891 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8E22B7B442500C64891 /* TimerViewModel.swift */; };
 		C9F1B8E62B7B50B400C64891 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8E52B7B50B400C64891 /* NotificationService.swift */; };
+		C9F1B8E92B7B6E3E00C64891 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8E82B7B6E3E00C64891 /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		C9F1B8E02B7B441D00C64891 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		C9F1B8E22B7B442500C64891 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		C9F1B8E52B7B50B400C64891 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C9F1B8E82B7B6E3E00C64891 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				C9F1B8C12B79D08A00C64891 /* MemoList */,
 				C9F1B8D52B7A50F500C64891 /* VoiceRecoder */,
 				C9F1B8DF2B7B440B00C64891 /* Timer */,
+				C9F1B8E72B7B6D3F00C64891 /* Setting */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -327,6 +330,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		C9F1B8E72B7B6D3F00C64891 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C9F1B8E82B7B6E3E00C64891 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -403,6 +414,7 @@
 				C9F1B8D02B7A342600C64891 /* MemoListView.swift in Sources */,
 				C9F1B8D72B7A510E00C64891 /* VoiceRecoderView.swift in Sources */,
 				C9F1B8B72B79CB5100C64891 /* Date+Extension.swift in Sources */,
+				C9F1B8E92B7B6E3E00C64891 /* SettingView.swift in Sources */,
 				C9F1B8AF2B79105C00C64891 /* PathType.swift in Sources */,
 				C9F1B8B12B7911B000C64891 /* HomeView.swift in Sources */,
 				C9F1B8E62B7B50B400C64891 /* NotificationService.swift in Sources */,
