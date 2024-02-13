@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class TimerViewModel: ObservableObject {
 
@@ -14,19 +15,22 @@ class TimerViewModel: ObservableObject {
     @Published var timer: Timer?
     @Published var timeRemaining: Int
     @Published var isPaused: Bool
+    var notificationService: NotificationService
 
     init(
         isDisplaySetTimeView: Bool = true,
         time: Time = .init(hours: 0, minutes: 0, seconds: 0),
         timer: Timer? = nil,
         timeRemaining: Int = 0,
-        isPaused: Bool = false
+        isPaused: Bool = false,
+        notificationService: NotificationService = .init()
     ) {
         self.isDisplaySetTimeView = isDisplaySetTimeView
         self.time = time
         self.timer = timer
         self.timeRemaining = timeRemaining
         self.isPaused = isPaused
+        self.notificationService = notificationService
     }
 }
 
@@ -59,6 +63,15 @@ private extension TimerViewModel {
     func startTimer() {
         guard timer == nil else { return }
 
+        // 백그라운드 작업에 필요한 코드
+        var backgroundTaskID: UIBackgroundTaskIdentifier?
+        backgroundTaskID = UIApplication.shared.beginBackgroundTask {
+            if let task = backgroundTaskID {
+                UIApplication.shared.endBackgroundTask(task)
+                backgroundTaskID = .invalid
+            }
+        }
+
         timer = Timer.scheduledTimer(
             withTimeInterval: 1,
             repeats: true
@@ -67,6 +80,12 @@ private extension TimerViewModel {
                 self.timeRemaining -= 1
             } else {
                 self.stopTimer()
+                self.notificationService.sendNotification()
+
+                if let task = backgroundTaskID {
+                    UIApplication.shared.endBackgroundTask(task)
+                    backgroundTaskID = .invalid
+                }
             }
         }
     }
