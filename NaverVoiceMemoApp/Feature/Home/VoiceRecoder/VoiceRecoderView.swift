@@ -13,25 +13,27 @@ struct VoiceRecoderView: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
 
     var body: some View {
-        ZStack {
-            VStack {
-                // 타이틀 뷰
-                TitleView()
+        // 3번 Modifier 방법으로 작성
+        WriteButtonView(
+            content: {
+                VStack {
+                    // 타이틀 뷰
+                    TitleView()
 
-                // 안내뷰 || 보이스 레코더 리스트 뷰
-                if voiceRecorderViewModel.recordedFiles.isEmpty {
-                    AnnounceMentView()
-                } else {
-                    VoiceRecordListView(voiceRecorderViewModel: voiceRecorderViewModel)
-                        .padding(.top, 15)
+                    // 안내뷰 || 보이스 레코더 리스트 뷰
+                    if voiceRecorderViewModel.recordedFiles.isEmpty {
+                        AnnounceMentView()
+                    } else {
+                        VoiceRecordListView(voiceRecorderViewModel: voiceRecorderViewModel)
+                            .padding(.top, 15)
+                    }
                 }
-
-                // 녹음버튼 뷰
-                RecordButtonView(voiceRecorderViewModel: voiceRecorderViewModel)
-                    .padding(.trailing, 20)
-                    .padding(.bottom, 50)
-            }
-        }
+            },
+            action: {
+                voiceRecorderViewModel.recordButtonTapped()
+            },
+            imageName: voiceRecorderViewModel.isRecording ? "mic_recording" : "mic"
+        )
         .alert(
             "선택된 음성 메모를 삭제하시겠습니까?",
             isPresented: $voiceRecorderViewModel.isDisplayRemoveVoiceRecorderAlert

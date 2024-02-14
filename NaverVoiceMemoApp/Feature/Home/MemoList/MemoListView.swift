@@ -14,38 +14,35 @@ struct MemoListView: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
 
     var body: some View {
-        ZStack {
-            VStack {
-                if !memoListViewModel.memos.isEmpty {
-                    CustomNavigationBar(
-                        isDisplayLeftButton: false,
-                        rightButtonAction: {
-                            memoListViewModel.navigationRightButtonTapped()
-                        },
-                        rightButtonType: memoListViewModel.navigationBarRightButtonMode
-                    )
-                } else {
-                    Spacer()
-                        .frame(height: 30)
-                }
-
-                // 타이틀 뷰
-                MemoTitleView()
-
-                // 안내뷰 || 메모 컨텐츠뷰
-                if memoListViewModel.memos.isEmpty {
-                    MemoAnnounceView()
-                } else {
-                    MemoContentView()
-                        .padding(.top, 20)
-                }
+        VStack {
+            if !memoListViewModel.memos.isEmpty {
+                CustomNavigationBar(
+                    isDisplayLeftButton: false,
+                    rightButtonAction: {
+                        memoListViewModel.navigationRightButtonTapped()
+                    },
+                    rightButtonType: memoListViewModel.navigationBarRightButtonMode
+                )
+            } else {
+                Spacer()
+                    .frame(height: 30)
             }
 
-            // 메모작성 플로팅 아이콘 버튼
-            MemoWriteButtonView()
-                .padding(.trailing, 20)
-                .padding(.bottom, 50)
+            // 타이틀 뷰
+            MemoTitleView()
+
+            // 안내뷰 || 메모 컨텐츠뷰
+            if memoListViewModel.memos.isEmpty {
+                MemoAnnounceView()
+            } else {
+                MemoContentView()
+                    .padding(.top, 20)
+            }
         }
+        .writeButton(
+            perform: { pathModel.paths.append(.memoView(isCreateMode: true, memo: nil)) },
+            imageName: "writeBtn"
+        )
         .alert(
             "메모 \(memoListViewModel.removeMemoCount)개 삭제하시겠습니까?",
             isPresented: $memoListViewModel.isDisplayRemoveMemoAlert

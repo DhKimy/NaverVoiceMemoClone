@@ -44,6 +44,7 @@
 		C9F1B8E92B7B6E3E00C64891 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8E82B7B6E3E00C64891 /* SettingView.swift */; };
 		C9F1B8EC2B7B731400C64891 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8EB2B7B731400C64891 /* Tab.swift */; };
 		C9F1B8EE2B7B736F00C64891 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8ED2B7B736F00C64891 /* HomeViewModel.swift */; };
+		C9F1B8F12B7D0DAF00C64891 /* WriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B8F02B7D0DAF00C64891 /* WriteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		C9F1B8E82B7B6E3E00C64891 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		C9F1B8EB2B7B731400C64891 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		C9F1B8ED2B7B736F00C64891 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C9F1B8F02B7D0DAF00C64891 /* WriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		C9F1B8952B78FE7300C64891 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				C9F1B8EF2B7D0D9C00C64891 /* CustomView */,
 				C9F1B8B82B79CCE500C64891 /* NavigationBar */,
 			);
 			path = Component;
@@ -352,6 +355,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		C9F1B8EF2B7D0D9C00C64891 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C9F1B8F02B7D0DAF00C64891 /* WriteButton.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -437,6 +448,7 @@
 				C9F1B8BA2B79CCF900C64891 /* NavigationButtonType.swift in Sources */,
 				C9F1B8E32B7B442500C64891 /* TimerViewModel.swift in Sources */,
 				C9F1B8AD2B79105000C64891 /* Path.swift in Sources */,
+				C9F1B8F12B7D0DAF00C64891 /* WriteButton.swift in Sources */,
 				C9F1B8872B78F86E00C64891 /* ContentView.swift in Sources */,
 				C9F1B8A82B79066600C64891 /* OnboardingView.swift in Sources */,
 				C9F1B8C82B79D11C00C64891 /* TodoListViewModel.swift in Sources */,
